@@ -13,10 +13,19 @@ button.addEventListener('click', function () {
         let child = document.createElement('div');
         child.classList.add('childdiv');
         child.style.width = `${(container.clientWidth / numOfDiv) - 8}px`;
+        child.addEventListener('mouseover', changeColor)
+        child.addEventListener('mouseleave', removeColor)
         container.appendChild(child);
+        
     }
     numOfDiv = 101;
 
 })
 
+function changeColor(e){
+    e.target.style.backgroundColor = 'red';
+}
 
+function removeColor(e){
+    e.target.style.backgroundColor = 'white';
+}
